@@ -7,9 +7,12 @@ const app = express();
 
 connectDB();
 
+// ✅ CORS setup for requests with credentials
 app.use(cors({
-  origin: "*",
+  origin: "https://ai-project-itee.vercel.app", // frontend URL
+  credentials: true, // allow cookies and authorization headers
 }));
+
 app.use(express.json());
 
 app.get("/", (req, res) => {
