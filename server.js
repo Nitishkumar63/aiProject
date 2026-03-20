@@ -7,10 +7,14 @@ const app = express();
 
 connectDB();
 
-app.use(cors(
-  {origin:"https://ai-project-il68.vercel.app"}
-));
+app.use(cors({
+  origin: "https://ai-project-il68.vercel.app",
+}));
 app.use(express.json());
+
+app.get("/", (req, res) => {
+  res.send("Backend is running!");
+});
 
 app.use("/api", require("./routes/aiRoutes"));
 
