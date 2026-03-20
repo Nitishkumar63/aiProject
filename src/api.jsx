@@ -5,6 +5,7 @@ const API = axios.create({
   headers: {
     "Content-Type": "application/json",
   },
+  withCredentials:true
 });
 
 export const askAI = (prompt) => API.post("/ask-ai", { prompt });
