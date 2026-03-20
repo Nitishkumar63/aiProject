@@ -37,6 +37,7 @@ exports.askAI = async (req, res) => {
 
     res.json({ reply });
   } catch (error) {
+    console.log(error);
     res.status(error.response?.status || 500).json({
       error: "AI request failed",
       details: error.response?.data?.error?.message || error.message,
